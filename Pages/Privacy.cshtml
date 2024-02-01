@@ -1,0 +1,46 @@
+﻿@page
+@model DZ2_31._01._2024_.Animal
+@{
+    ViewData["Title"] = "Animals";
+}
+
+<h2>Animal Information</h2>
+
+    @if (Model.Name != null)
+    {
+        <p>Name: @Model.Name</p>
+        <p>Sound: @Model.Sound</p>
+        <button onclick="makeSound('dog')">Make Sound</button>
+    }
+    else
+    {
+        <p>Dog information not available</p>
+    }
+
+      @if (Model.Name != null)
+{
+    <div>
+        <h3>Cat</h3>
+        <p>Name: @Model.Name</p>
+        <p>Sound: @Model.Sound</p>
+        <button onclick="makeSound('cat')">Make Sound</button>
+    </div>
+}
+else
+{
+    <p>Cat information not available</p>
+}
+
+<script>
+    function makeSound(animal) {
+        console.log('Making sound for ' + animal);
+        $.ajax({
+            type: "POST",
+            url: "/Animal/MakeSound",
+            data: { animal: animal },
+            success: function (response) {
+                alert(response);
+            }
+        });
+    }
+</script>

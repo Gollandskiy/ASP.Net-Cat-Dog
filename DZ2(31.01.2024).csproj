@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>DZ2_31._01._2024_</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Animals.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Animals.cshtml" />
+  </ItemGroup>
+
+</Project>
