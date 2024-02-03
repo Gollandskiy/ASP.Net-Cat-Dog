@@ -1,15 +1,16 @@
 ﻿@page
-@model DZ2_31._01._2024_.Animal
+@model PrivacyModel;
 @{
     ViewData["Title"] = "Animals";
 }
 
 <h2>Animal Information</h2>
 
-    @if (Model.Name != null)
+    @if (Model.AnimalViewModel.Dog.Name != null)
     {
-        <p>Name: @Model.Name</p>
-        <p>Sound: @Model.Sound</p>
+        <h3>Dog</h3>
+        <p>Name: @Model.AnimalViewModel.Dog.Name</p>
+        <p>Sound: @Model.AnimalViewModel.Dog.Sound</p>
         <button onclick="makeSound('dog')">Make Sound</button>
     }
     else
@@ -17,12 +18,12 @@
         <p>Dog information not available</p>
     }
 
-      @if (Model.Name != null)
+      @if (Model.AnimalViewModel.Cat.Name != null)
 {
     <div>
         <h3>Cat</h3>
-        <p>Name: @Model.Name</p>
-        <p>Sound: @Model.Sound</p>
+        <p>Name: @Model.AnimalViewModel.Cat.Name</p>
+        <p>Sound: @Model.AnimalViewModel.Cat.Sound</p>
         <button onclick="makeSound('cat')">Make Sound</button>
     </div>
 }
